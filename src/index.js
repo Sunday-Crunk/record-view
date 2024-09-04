@@ -1,3 +1,1 @@
-import { HelloWorld } from "./components/HelloWorld";
-
-console.log(HelloWorld);
+import { ArchivalRecordsViewer } from "./components/RecordsView";
