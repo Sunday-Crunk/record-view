@@ -155,9 +155,11 @@ class ApiService {
     const loadChildren = async (parentPath, childrenContainer) => {
       try {
         const response = await apiService.getNodes([`${parentPath}/*`]);
-        const children = ApiService.buildHierarchy(response.Nodes, parentPath);
-        console.log('Loaded children:', children);
-        records.set(updateRecordsWithChildren(records(), parentPath, children));
+        if (response.Nodes && response.Nodes.length > 0) {
+          const children = ApiService.buildHierarchy(response.Nodes, parentPath);
+          console.log('Loaded children:', children);
+          records.set(updateRecordsWithChildren(records(), parentPath, children));
+        }
       } catch (error) {
         console.error('Error loading children:', error);
         childrenContainer.innerHTML = '<div class="loading">Error loading children</div>';
@@ -355,7 +357,7 @@ class ApiService {
         }
       </style>
       <div id="treeview">
-        <treeview-accordion onrecordSelected="${handleRecordSelected}"></treeview-accordion>
+        <treeview-accordion props=${{ onrecordSelected: handleRecordSelected }}></treeview-accordion>
       </div>
       <div id="metadata">
         <metadata-view props=${{ record: selectedRecord }}></metadata-view>
