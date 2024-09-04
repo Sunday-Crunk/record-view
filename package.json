@@ -1,0 +1,21 @@
+{
+  "name": "record-view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@air-apps/air-js": "^1.1.5"
+  }
+}
