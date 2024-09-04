@@ -1,1 +1,1 @@
-import { ArchivalRecordsViewer } from "./components/RecordsView";
+import { TreeViewAccordion } from "./components/RecordsView";
